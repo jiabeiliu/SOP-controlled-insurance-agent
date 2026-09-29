@@ -1,0 +1,5 @@
+{
+  "default_guidance":{"en":"Use the member portal or claim upload link first when possible. Each file should be legible and complete, with claim-identifying details, relevant dates, and the issuing provider, facility, shop, or record source visible where applicable. If online upload is not available, support can help arrange fax or mail submission."},
+  "case_type_guidance":{"healthcare":{"en":"For medical claims, include the treating provider or facility name on each page when available."},"auto":{"en":"For auto claims, keep the repair estimate and the accident photos tied to the same incident so the reviewer can match the visible damage to the quote."}},
+  "claim_followup_settings":{"average_processing_time_after_submission":{"en":"usually less than a week"}}
+}
