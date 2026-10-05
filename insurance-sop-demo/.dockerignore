@@ -1,0 +1,14 @@
+node_modules
+dist
+.next
+.vinext
+.test-build
+coverage
+.git
+.wrangler
+.env*
+examples
+*.tsbuildinfo
+npm-debug.log*
+README 2.md
+app/* 2.*
