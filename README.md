@@ -4,6 +4,8 @@ A conversational claims-support demo with a server-enforced workflow:
 
 `VERIFY_ID → RESOLVE_INTENT → PROCESS_CASE → POST_PROCESS`
 
+**[Open the public demo](https://northstar-insurance-sop-harness.nicoleliuuuuu.chatgpt.site)** — runs with synthetic records in deterministic fallback mode. No API key or account is needed to try the four-phase conversation. Email delivery is simulated.
+
 The agent remembers case details mentioned early, but it cannot disclose claim data until three allowed identity fields match the same policyholder. After verification, it resolves the caller's claim from synthetic fixture records, answers grounded follow-up questions, and asks for explicit consent before a simulated email summary.
 
 ## Demo screenshots

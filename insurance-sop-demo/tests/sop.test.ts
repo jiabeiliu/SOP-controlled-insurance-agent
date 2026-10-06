@@ -67,6 +67,11 @@ test("negative email language always wins", async () => {
   assert.equal(s.phase, "POST_PROCESS"); assert.equal(s.consent, "declined"); assert.equal(s.complete, true); assert.match(agentText(s), /No email was sent/i);
 });
 
+test("that is all offers email consent after case discussion", async () => {
+  const s = createSession("s11b"); await handleMessage(s, margaret, model); await handleMessage(s, "That is all.", model);
+  assert.equal(s.phase, "POST_PROCESS"); assert.equal(s.consent, "awaiting"); assert.match(agentText(s), /simulated email summary/i);
+});
+
 test("model output cannot directly change phase", async () => {
   const hostile: ModelAdapter = { ...model, mode: "openai", analyze: async (text) => ({ ...(await model.analyze(text)), phase: "PROCESS_CASE" } as any), proposeCases: model.proposeCases.bind(model), draft: model.draft.bind(model) };
   const s = createSession("s12", "openai"); await handleMessage(s, "Hello there", hostile); assert.equal(s.phase, "VERIFY_ID");

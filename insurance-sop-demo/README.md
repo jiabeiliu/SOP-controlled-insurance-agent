@@ -2,6 +2,8 @@
 
 A claims-support demo that keeps workflow authority and protected records on the server while using an AI model only for bounded, schema-validated language tasks.
 
+Public demo: [Northstar Insurance SOP Harness](https://northstar-insurance-sop-harness.nicoleliuuuuu.chatgpt.site). The hosted demo currently uses deterministic fallback with synthetic fixture data; no OpenAI key is configured on the Site. The model-backed path is available when a server-side key is supplied in your own deployment.
+
 ## Architecture
 
 - `app/page.tsx` is an untrusted chat client. It has no policyholder records, claim records, API key, or phase-transition authority.

@@ -102,7 +102,7 @@ export class DeterministicModelAdapter implements ModelAdapter {
     hints.topic = /why|reason/i.test(text) ? "denial_reason" : /document|paperwork|report|office note/i.test(text) ? "documents" : /deadline|when.*(?:send|submit)/i.test(text) ? "deadline" : /upload|where.*send|how.*submit/i.test(text) ? "submission" : /how long|processing|review time/i.test(text) ? "processing_time" : /status|outcome/i.test(text) ? "status" : /claim|denied|coverage|policy/i.test(text) ? "general" : null;
     const scope = /reinforcement learning|photosynthesis|weather|recipe|capital of|poem|bitcoin|sports score/i.test(text) ? "out_of_scope" : (hints.topic || hints.caseType || hints.status || Object.values(facts).some(Boolean)) ? "insurance" : "unclear";
     const emotion = /angry|furious|ridiculous/i.test(text) ? "angry" : /frustrat|already told/i.test(text) ? "frustrated" : /worried|anxious|scared/i.test(text) ? "anxious" : /confused|don't understand/i.test(text) ? "confused" : "neutral";
-    return { facts, hints, emotion, refusal: /refuse|won't|will not|not giving|don't want to (?:give|provide)/i.test(text), scope, wantsHuman: /human|representative|agent|supervisor/i.test(text), doneWithCase: /that's all|nothing else|\bi'?m done\b|wrap up|finish/i.test(text) };
+    return { facts, hints, emotion, refusal: /refuse|won't|will not|not giving|don't want to (?:give|provide)/i.test(text), scope, wantsHuman: /human|representative|agent|supervisor/i.test(text), doneWithCase: /that(?:'s| is) all|nothing else|\bi'?m done\b|wrap up|finish/i.test(text) };
   }
   async proposeCases(_text: string, hints: IntentHints, index: Array<Pick<Claim, "case_id" | "case_type" | "created_at" | "status">>): Promise<CaseProposal> {
     let matches = index;
